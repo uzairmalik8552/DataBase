@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; // Use named import
+import { jwtDecode } from "jwt-decode"; 
 
 const ProtectedRoute = ({ children }) => {
   const checkToken = () => {
@@ -10,12 +10,12 @@ const ProtectedRoute = ({ children }) => {
         const decoded = jwtDecode(token);
         const currentTime = Date.now() / 1000;
         if (decoded.exp < currentTime) {
-          sessionStorage.removeItem("token"); // Token expired, clear it
+          sessionStorage.removeItem("token"); 
           return false;
         }
         return true;
       } catch (err) {
-        sessionStorage.removeItem("token"); // Token is invalid, clear it
+        sessionStorage.removeItem("token"); 
         return false;
       }
     }

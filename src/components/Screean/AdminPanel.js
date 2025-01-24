@@ -42,17 +42,17 @@ const AdminPanel = () => {
   useEffect(() => {
     // Function to fetch contacts on component mount
     const getContacts = async () => {
-      const token = sessionStorage.getItem("token"); // Get token from session storage
+      const token = sessionStorage.getItem("token"); 
       try {
         // Fetch contacts using the API function
         const contactsData = await fetchAllContacts(token);
         setContacts(contactsData); // Set contacts in state
       } catch (error) {
-        console.error("Error fetching contacts:", error); // Handle errors
+        console.error("Error fetching contacts:", error); 
       }
     };
 
-    getContacts(); // Call the fetch function
+    getContacts(); 
   }, [flag]);
 
   const updateflage = () => {

@@ -261,7 +261,7 @@ const ExecutiveDirectorPanel = () => {
   function getCurrentDate() {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const month = String(today.getMonth() + 1).padStart(2, "0"); 
     const day = String(today.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   }
@@ -369,8 +369,8 @@ const ExecutiveDirectorPanel = () => {
 
   const transferContacts = async () => {
     const contactsToTransfer = transferMember.slice(0, finalTransferlength);
-    const contactIds = contactsToTransfer.map((contact) => contact._id); // This should be an array
-    settransferFlag(false); // Reset transfer flag
+    const contactIds = contactsToTransfer.map((contact) => contact._id); 
+    settransferFlag(false); 
 
     try {
       const response = await axios.put(

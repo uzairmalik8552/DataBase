@@ -71,6 +71,7 @@ const ContactCard = ({
 
   // Function to render the Executive Director's contact card
   const EDcard = () => {
+    console.log(contact.reminderFlag);
     return (
       <tr
         className={`${

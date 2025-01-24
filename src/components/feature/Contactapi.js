@@ -47,7 +47,7 @@ export const fetchAllContacts = async (token) => {
     // Making the API request
     const response = await axios.get("http://localhost:5000/contacts/all", {
       headers: {
-        Authorization: `Bearer ${token}`, // Passing the token for authorization if needed
+        Authorization: `Bearer ${token}`, 
       },
     });
 
@@ -59,7 +59,7 @@ export const fetchAllContacts = async (token) => {
       "Error fetching all contacts:",
       error.response?.data || error.message
     );
-    throw error; // Optionally rethrow the error for further handling
+    throw error; 
   }
 };
 
@@ -75,12 +75,12 @@ export const deleteContactAPI = async (token, id) => {
       }
     );
     console.log("Contact deleted successfully:", response.data);
-    return response.data; // Optionally return the response data
+    return response.data; 
   } catch (error) {
     console.error(
       "Error deleting contact:",
       error.response?.data || error.message
     );
-    throw error; // Optionally throw error to handle it in the calling function
+    throw error; 
   }
 };
